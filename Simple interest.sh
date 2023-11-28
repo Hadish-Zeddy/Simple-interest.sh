@@ -1,30 +1,24 @@
 #!/bin/bash
 
-# Function to calculate simple interest
-calculate_simple_interest() {
-    principal=$300000
-    rate=$1.5%
-    time=$6 years 3 months
-
-    # Simple interest formula: SI = P * R * T / 100
-    interest=$(echo "scale=2; $principal * $rate * $time / 100" | bc)
-
-    echo "Principal: $principal"
-    echo "Rate of interest: $rate%"
-    echo "Time (in years): $time"
-    echo "Simple Interest: $interest"
-}
-
-# Input values
-read -p "Enter the principal amount: " principal
-read -p "Enter the rate of interest (in percentage): " rate
-read -p "Enter the time (in years): " time
-
-# Call the function with input values
-calculate_simple_interest $principal $rate $time
-
-# Make it executable by running the command:
-chmod +x simple_interest_calculator.sh
-
-#You can then run the script by executing
-./simple_interest_calculator.sh
+  
+   # This script calculates simple interest given principal,
+   # annual rate of interest and time period in years.
+   # Do not use this in production. Sample purpose only.
+   # Author: Upkar Lidder (IBM)
+   # Additional Authors:
+   # <your GitHub username>
+   # Input:
+   # p, principal amount
+   # t, time period in years
+   # r, annual rate of interest
+   # Output:
+   # simple interest = p*t*r
+   echo "Enter the principal:"
+   read p
+   echo "Enter rate of interest per year:"
+   read r
+   echo "Enter time period in years:"
+   read t
+   s=`expr $p \* $t \* $r / 100`
+   echo "The simple interest is: "
+   echo $s
